@@ -14,8 +14,8 @@ export const oneTimePrice: PriceLink[] = [
 
 export const monthlyPrice: PriceLink[] = [
   { price: '10', link: 'https://donate.stripe.com/00g16gbElb5x4WAdQS' },
-  { price: '25', link: 'https://donate.stripe.com/9AQdT223L7Tl3Sw9AB' },
-  { price: '50', link: 'https://donate.stripe.com/6oE7uE5fXa1t9cQ6or' },
+  { price: '25', link: 'https://donate.stripe.com/9AQ16g0ZHa1tfBeeV7' },
+  { price: '50', link: 'https://donate.stripe.com/fZebKU37P0qTgFi8wK' },
   { price: '100', link: 'https://donate.stripe.com/28o5mw6k17Tl0GkbIM' },
   { price: '200', link: 'https://donate.stripe.com/6oEbKUgYFc9B60EcMR' },
   { price: '500', link: 'https://donate.stripe.com/7sIeX67o5ehJagU7sz' },

@@ -8,6 +8,7 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '../lib/utils';
+import { VERSE_CARD } from '../utils/constants';
 
 type CardProps = React.ComponentProps<typeof Card>;
 
@@ -17,7 +18,7 @@ export default function TitleContainer({ className }: CardProps) {
       <Card className={cn('w-full', className)}>
         <CardHeader className='relative w-full'>
           <Image
-            src='/goodspoonLogo.jpg'
+            src={VERSE_CARD}
             width={500}
             height={250}
             alt='verse image'
@@ -31,7 +32,7 @@ export default function TitleContainer({ className }: CardProps) {
           <p>Thank you for your support</p>
         </CardContent>
         <CardFooter>
-          <div className='flex flex-col gap-1'>
+          <div className='flex flex-col gap-1 text-xs leading-2.5'>
             <p>Organized by Good Spoon</p>
             <p>501(c)(3) Public Charity · EIN 20-1182359</p>
             <Link href='mailto:on.goodspoon@gmail.com' className='underline'>
