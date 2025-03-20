@@ -8,7 +8,7 @@ export const submitOnetimePayment = async (
 ): Promise<{ message: string }> => {
   const link = formData.get('oneTimeLink') as string;
   if (!link) {
-    return { message: 'Please click a One-Time Payment Price.' };
+    return { message: 'Please Choose a One-Time Payment Amount.' };
   }
   console.log(link);
   redirect(link);
@@ -20,7 +20,7 @@ export const submitMonthlyPayment = async (
 ): Promise<{ message: string }> => {
   const link = formData.get('monthlyLink') as string;
   if (!link) {
-    return { message: 'Please click a Monthly Payment Price.' };
+    return { message: 'Please Choose a Monthly Payment Amount.' };
   }
   console.log(link);
   redirect(link);

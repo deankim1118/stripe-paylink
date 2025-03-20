@@ -32,7 +32,7 @@ export default function PriceButton({
         type='button'
         disabled={pending}
         size={size}
-        className={`capitalize focus:bg-primary/80 cursor-pointer ${className}`}
+        className={`capitalize font-semibold focus:bg-primary/80 cursor-pointer ${className}`}
         onClick={handleClickButton}
       >
         <span>{text}</span>

@@ -3,6 +3,7 @@
 import {
   Card,
   CardContent,
+  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -14,17 +15,41 @@ import { monthlyPrice, oneTimePrice } from '../utils/onetimePrice';
 import DonateButton from './DonateButton';
 import FormContainer from './FormContainer';
 import { submitMonthlyPayment, submitOnetimePayment } from '../utils/action';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function DonationForm() {
+export default function DonationForm({
+  hiddenClass,
+}: {
+  hiddenClass?: string;
+}) {
   const [selectedLink, setSelectedLink] = useState<string>('');
 
+  useEffect(() => {
+    const handleDocumentClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (
+        !target.closest('.price-button') &&
+        !target.closest('.donate-button')
+      ) {
+        setSelectedLink('');
+      }
+    };
+
+    document.addEventListener('click', handleDocumentClick);
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, []);
+
   return (
-    <Card className='p-8 justify-center'>
+    <Card
+      className={`p-4 xs:justify-center justify-start w-full h-full ${hiddenClass}`}
+    >
       <CardHeader>
-        <CardTitle>Good Spoon</CardTitle>
+        <CardTitle className='text-center'>Choose Amount</CardTitle>
+        <CardDescription>Good Spoon</CardDescription>
       </CardHeader>
-      <Tabs defaultValue='onetime' className='w-full'>
+      <Tabs defaultValue='onetime' className='w-full '>
         <TabsList className='grid w-full grid-cols-2'>
           <TabsTrigger value='onetime'>One-Time</TabsTrigger>
           <TabsTrigger value='monthly'>Monthly</TabsTrigger>
@@ -39,7 +64,7 @@ export default function DonationForm() {
                       key={item.link}
                       text={`$ ${item.price}`}
                       link={item.link}
-                      className='w-full'
+                      className='w-full price-button '
                       setSelectedLink={setSelectedLink}
                     />
                     <input
@@ -51,7 +76,7 @@ export default function DonationForm() {
                 ))}
               </CardContent>
               <CardFooter>
-                <DonateButton />
+                <DonateButton className='donate-button' />
               </CardFooter>
             </Card>
           </FormContainer>
@@ -66,7 +91,7 @@ export default function DonationForm() {
                       key={item.link}
                       text={`$ ${item.price}`}
                       link={item.link}
-                      className='w-full'
+                      className='w-full price-button'
                       setSelectedLink={setSelectedLink}
                     />
                     <input
@@ -78,7 +103,7 @@ export default function DonationForm() {
                 ))}
               </CardContent>
               <CardFooter>
-                <DonateButton />
+                <DonateButton className='donate-button' />
               </CardFooter>
             </Card>
           </FormContainer>
