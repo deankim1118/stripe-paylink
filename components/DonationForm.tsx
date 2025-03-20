@@ -47,10 +47,12 @@ export default function DonationForm({
     >
       <CardHeader>
         <CardTitle className='text-center'>Choose Amount</CardTitle>
-        <CardDescription>Good Spoon</CardDescription>
+        <CardDescription className='text-center text-md font-light'>
+          Good Spoon Urban Ministry
+        </CardDescription>
       </CardHeader>
       <Tabs defaultValue='onetime' className='w-full '>
-        <TabsList className='grid w-full grid-cols-2'>
+        <TabsList className='grid w-full grid-cols-2 '>
           <TabsTrigger value='onetime'>One-Time</TabsTrigger>
           <TabsTrigger value='monthly'>Monthly</TabsTrigger>
         </TabsList>
@@ -64,7 +66,7 @@ export default function DonationForm({
                       key={item.link}
                       text={`$ ${item.price}`}
                       link={item.link}
-                      className='w-full price-button '
+                      className='w-full price-button'
                       setSelectedLink={setSelectedLink}
                     />
                     <input

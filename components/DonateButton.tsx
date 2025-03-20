@@ -19,7 +19,7 @@ export default function DonateButton({
   return (
     <div className={`w-full ${hiddenClass}`}>
       <Button
-        className='w-full cursor-pointer'
+        className='w-full cursor-pointer text-lg'
         size='lg'
         disabled={pending}
         asChild

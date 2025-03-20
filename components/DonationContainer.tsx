@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import DonateButton from '../components/DonateButton';
-import DonationForm from '../components/DonationForm';
-import DonationModal from '../components/donationModal';
-import Logo from '../components/navbar/Logo';
-import TitleContainer from '../components/TitleContainer';
+import DonateButton from '@/components/DonateButton';
+import DonationForm from '@/components/DonationForm';
+import DonationModal from '@/components/DonationModal';
+import Logo from '@/components/navbar/Logo';
+import TitleContainer from '@/components/TitleContainer';
 
 export default function DonationContainer() {
   const [isModalOpen, setIsModalOpen] = useState(false);

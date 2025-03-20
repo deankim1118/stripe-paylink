@@ -22,12 +22,12 @@ export default function TitleContainer({ className }: CardProps) {
             width={500}
             height={250}
             alt='verse image'
-            className=''
+            className='w-full'
             priority
           />
         </CardHeader>
         <CardTitle className=' px-6'>
-          <p>Good Spoon</p>
+          <p>Good Spoon Urban Ministry</p>
         </CardTitle>
         <CardContent>
           <p>Thank you for your support</p>
