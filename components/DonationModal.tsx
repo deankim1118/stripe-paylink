@@ -24,14 +24,14 @@ export default function DonationModal({
     >
       <dialog
         open={isOpen}
-        className='xs:mx-auto xs:rounded-xl h-full xs:h-auto transition-transform w-screen xs:max-w-max'
+        className='xs:mx-auto xs:rounded-xl xs:h-auto xs:max-w-max transition-transform w-screen h-screen'
       >
         <DonationForm hiddenClass='xs:w-[470px]' />
         <Button
           variant='outline'
           size='icon'
           onClick={onClose}
-          className='absolute top-7 right-7 text-6xl bg-primary text-white hover:bg-secondary hover:text-primary'
+          className='absolute top-10 xs:top-4 right-4 text-6xl bg-primary text-white hover:bg-secondary hover:text-primary'
         >
           <X className='size-8 ' />
         </Button>

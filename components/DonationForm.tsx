@@ -16,6 +16,9 @@ import DonateButton from './DonateButton';
 import FormContainer from './FormContainer';
 import { submitMonthlyPayment, submitOnetimePayment } from '../utils/action';
 import { useEffect, useState } from 'react';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css'; // 기본 스타일
+import { IoShieldCheckmark } from 'react-icons/io5';
 
 export default function DonationForm({
   hiddenClass,
@@ -23,6 +26,7 @@ export default function DonationForm({
   hiddenClass?: string;
 }) {
   const [selectedLink, setSelectedLink] = useState<string>('');
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const handleDocumentClick = (event: MouseEvent) => {
@@ -43,10 +47,28 @@ export default function DonationForm({
 
   return (
     <Card
-      className={`p-4 xs:justify-center justify-start w-full h-full ${hiddenClass}`}
+      className={`xs:p-4 xs:justify-center justify-start pt-10 w-full h-full ${hiddenClass}`}
     >
       <CardHeader>
-        <CardTitle className='text-center'>Choose Amount</CardTitle>
+        <CardTitle className='text-center flex items-center justify-center gap-3'>
+          <Tippy
+            content="We use industry-leading SSL and encryption to keep your information secure. We never access or store your payment details; they're sent directly to Stripe which is payment providers."
+            trigger='click'
+            visible={visible}
+            onClickOutside={() => setVisible(false)}
+            onTrigger={(trigger) => console.log(trigger)}
+          >
+            <button
+              type='button'
+              aria-label='Security Info'
+              onClick={() => setVisible((prev) => !prev)}
+              className='flex items-center rounded-full focus:outline-none focus-visible:bg-gray-100'
+            >
+              <IoShieldCheckmark className='size-6 text-green-600' />
+            </button>
+          </Tippy>
+          Choose Amount
+        </CardTitle>
         <CardDescription className='text-center text-md font-light'>
           Good Spoon Urban Ministry
         </CardDescription>

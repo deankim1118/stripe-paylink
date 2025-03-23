@@ -32,7 +32,7 @@ export default function PriceButton({
         type='button'
         disabled={pending}
         size={size}
-        className={`py-8 capitalize font-semibold text-xl sm:text-[16px] md:text-xl focus:bg-primary/80 cursor-pointer ${className}`}
+        className={`py-8 capitalize font-semibold text-xl sm:text-[16px] md:text-xl focus:bg-primary/90 cursor-pointer ${className}`}
         onClick={handleClickButton}
       >
         <span>{text}</span>
