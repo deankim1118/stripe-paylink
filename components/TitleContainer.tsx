@@ -26,13 +26,13 @@ export default function TitleContainer({ className }: CardProps) {
             priority
           />
         </CardHeader>
-        <CardTitle className=' px-6'>
+        <CardTitle className='text-primary px-6'>
           <p>Good Spoon Urban Ministry</p>
         </CardTitle>
-        <CardContent>
+        <CardContent className='text-lg text-secondary-foreground'>
           <p>Thank you for your support</p>
         </CardContent>
-        <CardFooter className='bg-secondary py-4'>
+        <CardFooter className='bg-secondary py-4 text-secondary-foreground'>
           <div className='flex flex-col gap-1 text-xs leading-3 '>
             <p>Organized by Good Spoon</p>
             <p>501(c)(3) Public Charity · EIN 20-1182359</p>

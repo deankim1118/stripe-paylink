@@ -75,12 +75,16 @@ export default function DonationForm({
       </CardHeader>
       <Tabs defaultValue='onetime' className='w-full '>
         <TabsList className='grid w-full grid-cols-2 '>
-          <TabsTrigger value='onetime'>One-Time</TabsTrigger>
-          <TabsTrigger value='monthly'>Monthly</TabsTrigger>
+          <TabsTrigger className='cursor-pointer' value='onetime'>
+            One-Time
+          </TabsTrigger>
+          <TabsTrigger className='cursor-pointer' value='monthly'>
+            Monthly
+          </TabsTrigger>
         </TabsList>
         <TabsContent value='onetime'>
           <FormContainer action={submitOnetimePayment}>
-            <Card>
+            <Card className='pt-6'>
               <CardContent className='grid grid-cols-3 gap-2 '>
                 {oneTimePrice.map((item, index) => (
                   <div key={index}>
@@ -99,15 +103,33 @@ export default function DonationForm({
                   </div>
                 ))}
               </CardContent>
-              <CardFooter>
+              <CardContent>
                 <DonateButton className='donate-button' />
+              </CardContent>
+              <CardFooter className='bg-secondary h-full py-4'>
+                <div className='flex flex-col w-full gap-1'>
+                  <h3 className='text-2xl font-extralight text-center text-purple-700/80'>
+                    <span>Send money with Zelle</span>
+                    <span className='text-sm align-super'>&reg;</span>
+                  </h3>
+                  <p className='text-xl font-light'>
+                    Scan in your banking app to pay
+                  </p>
+                  <p className='self-end'>
+                    <span className='uppercase text-lg'>Good spoon </span>
+                    <span className='font-light'>at </span>{' '}
+                    <span className='font-semibold'>
+                      goodspoonusa@gmaill.com
+                    </span>
+                  </p>
+                </div>
               </CardFooter>
             </Card>
           </FormContainer>
         </TabsContent>
         <TabsContent value='monthly'>
           <FormContainer action={submitMonthlyPayment}>
-            <Card>
+            <Card className='pt-6'>
               <CardContent className='grid grid-cols-3 gap-2'>
                 {monthlyPrice.map((item, index) => (
                   <div key={index}>
@@ -126,8 +148,26 @@ export default function DonationForm({
                   </div>
                 ))}
               </CardContent>
-              <CardFooter>
+              <CardContent>
                 <DonateButton className='donate-button' />
+              </CardContent>
+              <CardFooter className='bg-secondary h-full py-4 text-secondary-foreground'>
+                <div className='flex flex-col w-full gap-1'>
+                  <h3 className='text-2xl font-extralight text-center text-purple-700/80'>
+                    <span>Send money with Zelle</span>
+                    <span className='text-sm align-super'>&reg;</span>
+                  </h3>
+                  <p className='text-xl font-light'>
+                    Scan in your banking app to pay
+                  </p>
+                  <p className='self-end'>
+                    <span className='uppercase text-lg'>Good spoon </span>
+                    <span className='font-light'>at </span>{' '}
+                    <span className='font-semibold'>
+                      goodspoonusa@gmaill.com
+                    </span>
+                  </p>
+                </div>
               </CardFooter>
             </Card>
           </FormContainer>
